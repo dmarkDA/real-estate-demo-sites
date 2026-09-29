@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Estate Website Portfolio</title>
+<style>
+  :root{ --ink:#0f172a; --ink-soft:#64748b; --border:#e2e8f0; --bg:#f8fafc; --accent:#2563eb; }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;}
+  .wrap{max-width:960px;margin:0 auto;padding:56px 20px 80px;}
+  h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;}
+  p.lead{color:var(--ink-soft);max-width:640px;margin:0 0 40px;font-size:16px;}
+  .grid{display:grid;grid-template-columns:1fr;gap:20px;}
+  @media (min-width:720px){ .grid{grid-template-columns:repeat(3,1fr);} }
+  .card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px;text-decoration:none;color:inherit;
+        box-shadow:0 6px 18px -10px rgba(15,23,42,.15);transition:transform .15s, box-shadow .15s;display:block;}
+  .card:hover{transform:translateY(-3px);box-shadow:0 14px 28px -12px rgba(15,23,42,.25);}
+  .card .tag{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+             color:var(--accent);background:#eff6ff;padding:4px 10px;border-radius:100px;margin-bottom:12px;}
+  .card h2{font-size:19px;margin:0 0 8px;}
+  .card p{margin:0;color:var(--ink-soft);font-size:14px;}
+  .extra{margin-top:48px;padding-top:32px;border-top:1px solid var(--border);}
+  .extra h2{font-size:20px;margin:0 0 8px;}
+  .extra p{color:var(--ink-soft);font-size:15px;max-width:640px;}
+  .extra a{color:var(--accent);font-weight:600;text-decoration:none;}
+  .extra a:hover{text-decoration:underline;}
+  footer{margin-top:56px;font-size:13px;color:var(--ink-soft);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Real Estate Website Portfolio</h1>
+  <p class="lead">Three responsive real estate site concepts, each with a distinct design direction, built with plain HTML/CSS/JS and populated with demo listings.</p>
+
+  <div class="grid">
+    <a class="card" href="01-modern-minimal/">
+      <span class="tag">Modern Minimal</span>
+      <h2>Harborview Realty</h2>
+      <p>Clean, light layout with a search/filter hero, listing grid, and an optional live REALTOR.ca® search integration.</p>
+    </a>
+    <a class="card" href="02-luxury-estate/">
+      <span class="tag">Luxury / Dark</span>
+      <h2>Sterling &amp; Gold Estates</h2>
+      <p>Dark, editorial theme with gold accents for a high-end estate and penthouse portfolio.</p>
+    </a>
+    <a class="card" href="03-bold-vibrant/">
+      <span class="tag">Bold &amp; Playful</span>
+      <h2>Nestly</h2>
+      <p>Colorful, friendly design aimed at first-time buyers browsing condos and starter homes.</p>
+    </a>
+  </div>
+
+  <div class="extra">
+    <h2>Wix Velo integration sample</h2>
+    <p>A code sample (not a hosted page — Wix custom code only runs inside a live Wix site) showing a lead form wired into the Wix CRM, an email notification, an external CRM webhook, and an inbound Calendly booking webhook.
+    See the <a href="https://github.com/REPLACE_OWNER/REPLACE_REPO/tree/main/04-wix-lead-integration-example">04-wix-lead-integration-example</a> folder.</p>
+  </div>
+
+  <footer>All listings, agents and testimonials on these sites are fictitious demo content.</footer>
+</div>
+</body>
+</html>

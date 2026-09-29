@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sterling &amp; Gold Estates | Exceptional Properties</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#home" class="logo">
+      <span class="mark">S&amp;G</span>
+      <span class="logo-text">STERLING<em>&amp; GOLD</em></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#collection">The Collection</a>
+      <a href="#services">Services</a>
+      <a href="#agent">Your Agent</a>
+      <a href="#contact">Inquire</a>
+    </nav>
+    <a href="#contact" class="btn btn-outline nav-cta">Private Consultation</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home">Home</a>
+  <a href="#collection">The Collection</a>
+  <a href="#services">Services</a>
+  <a href="#agent">Your Agent</a>
+  <a href="#contact">Inquire</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1800&q=70')"></div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <p class="eyebrow">By Private Invitation &amp; Exclusive Listing</p>
+    <h1>Extraordinary homes,<br>for an extraordinary life.</h1>
+    <p class="hero-sub">Sterling &amp; Gold Estates represents the finest luxury properties across the region — waterfront estates, penthouses, and private compounds.</p>
+    <div class="hero-actions">
+      <a href="#collection" class="btn btn-gold">View The Collection</a>
+      <a href="#contact" class="btn btn-outline">Schedule a Private Tour</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll<span></span></div>
+</section>
+
+<section class="stats-band">
+  <div class="container stats-grid">
+    <div><strong>$2.4B+</strong><span>In Closed Sales</span></div>
+    <div><strong>180+</strong><span>Estates Represented</span></div>
+    <div><strong>19</strong><span>Years of Discretion</span></div>
+    <div><strong>100%</strong><span>Client Confidentiality</span></div>
+  </div>
+</section>
+
+<section class="collection" id="collection">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">The Portfolio</p>
+      <h2>Current Offerings</h2>
+      <p class="section-sub">A curated selection of the region's most distinguished residences.</p>
+    </div>
+
+    <div class="filter-chips" id="filterChips">
+      <button class="chip active" data-filter="all">All Estates</button>
+      <button class="chip" data-filter="Waterfront">Waterfront</button>
+      <button class="chip" data-filter="Penthouse">Penthouse</button>
+      <button class="chip" data-filter="Estate">Country Estate</button>
+    </div>
+
+    <div class="listing-grid" id="listingGrid"></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container services-grid">
+    <div class="service-copy">
+      <p class="eyebrow">White-Glove Service</p>
+      <h2>Every detail, quietly handled.</h2>
+      <p>From the first showing to the final signature, our team manages every detail with absolute discretion — private showings, off-market access, and concierge-level support throughout.</p>
+      <div class="service-list">
+        <div><h4>Off-Market Access</h4><p>See listings before they ever reach the public market.</p></div>
+        <div><h4>Global Reach</h4><p>A referral network spanning six continents for qualified buyers.</p></div>
+        <div><h4>Confidential Process</h4><p>NDAs, private showings, and discreet negotiation as standard.</p></div>
+      </div>
+    </div>
+    <div class="service-image">
+      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=900&q=70" alt="Elegant interior living room" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="agent" id="agent">
+  <div class="container agent-grid">
+    <div class="agent-photo">
+      <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=700&q=70" alt="Portrait of lead agent Vivienne Cross" loading="lazy">
+    </div>
+    <div class="agent-copy">
+      <p class="eyebrow">Your Advisor</p>
+      <h2>Vivienne Cross</h2>
+      <p class="agent-role">Principal Broker, Sterling &amp; Gold Estates</p>
+      <p>With nearly two decades representing the region's most prestigious addresses, Vivienne brings unmatched discretion and a network of qualified buyers and sellers to every engagement.</p>
+      <blockquote>“I don't just sell homes — I curate a lifestyle transition for every client, start to finish.”</blockquote>
+      <a href="#contact" class="btn btn-gold">Request an Introduction</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=70')"></div>
+  <div class="hero-overlay"></div>
+  <div class="container cta-inner">
+    <div class="cta-copy">
+      <p class="eyebrow">By Appointment Only</p>
+      <h2>Begin your private consultation.</h2>
+      <p>Share a few details and a Sterling &amp; Gold advisor will reach out within the day to arrange a confidential discussion.</p>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <input type="text" placeholder="Full name" required>
+      <input type="email" placeholder="Email address" required>
+      <input type="tel" placeholder="Phone number">
+      <select>
+        <option value="">Area of Interest</option>
+        <option>Buying</option>
+        <option>Selling</option>
+        <option>Both</option>
+      </select>
+      <button type="submit" class="btn btn-gold">Submit Inquiry</button>
+      <p class="form-note" id="formNote" hidden>Thank you. An advisor will contact you shortly, in strict confidence.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <span class="logo-text footer-logo">STERLING<em>&amp; GOLD</em></span>
+      <p class="footer-tagline">Exceptional properties, represented with discretion. Demo brokerage — all listings are fictitious.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="#collection">The Collection</a>
+      <a href="#services">Services</a>
+      <a href="#agent">Your Agent</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="#contact">concierge@sterlingandgold.example</a>
+      <a href="#contact">(555) 402-1188</a>
+      <a href="#contact">One Regency Plaza, Suite 900</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Sterling &amp; Gold Estates. All content is fictitious demo material.</p>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

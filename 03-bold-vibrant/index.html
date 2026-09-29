@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nestly | Homes That Fit Your Life</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#home" class="logo">
+      <span class="logo-blob">🏡</span>
+      <span>Nestly</span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#listings">Find a Home</a>
+      <a href="#how">How It Works</a>
+      <a href="#stories">Stories</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary nav-cta">Let's Chat 👋</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home">Home</a>
+  <a href="#listings">Find a Home</a>
+  <a href="#how">How It Works</a>
+  <a href="#stories">Stories</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-shape shape-1"></div>
+  <div class="hero-shape shape-2"></div>
+  <div class="container hero-content">
+    <div class="hero-copy">
+      <p class="eyebrow">✨ 500+ fresh listings this month</p>
+      <h1>Your next home<br>is closer than<br><span class="highlight">you think.</span></h1>
+      <p class="hero-sub">Nestly makes finding a home feel exciting again — bright listings, honest prices, zero pressure.</p>
+      <div class="hero-actions">
+        <a href="#listings" class="btn btn-primary btn-lg">Browse Homes 🔍</a>
+        <a href="#how" class="btn btn-ghost btn-lg">How it works</a>
+      </div>
+      <div class="hero-avatars">
+        <div class="avatars">
+          <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=100&q=70" alt="">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=70" alt="">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&q=70" alt="">
+        </div>
+        <span>Joined by 8,400+ happy homeowners</span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=800&q=70" alt="Colorful modern home exterior">
+      <div class="floating-card card-price">🏠 <strong>$312,000</strong><span>Maple Street Condo</span></div>
+      <div class="floating-card card-badge">🔥 12 people viewed today</div>
+    </div>
+  </div>
+</section>
+
+<section class="filter-bar" id="listings">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Pick your vibe</p>
+      <h2>Find a home that fits 🎯</h2>
+    </div>
+    <div class="filter-chips" id="filterChips">
+      <button class="chip active" data-filter="all">All Homes</button>
+      <button class="chip" data-filter="Condo">🏢 Condos</button>
+      <button class="chip" data-filter="Starter Home">🏠 Starter Homes</button>
+      <button class="chip" data-filter="Duplex">🏘️ Duplex</button>
+    </div>
+
+    <div class="listing-grid" id="listingGrid"></div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">Easy as 1-2-3</p>
+      <h2>How Nestly works</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">1</div>
+        <h3>Browse &amp; Save 💛</h3>
+        <p>Swipe through homes that match your budget and vibe. Save your favorites in one tap.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">2</div>
+        <h3>Book a Tour 📅</h3>
+        <p>Pick a time that works for you — in person or a live video walkthrough, your call.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">3</div>
+        <h3>Make It Yours 🔑</h3>
+        <p>Our agents handle the paperwork so you can focus on picking paint colors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stories" id="stories">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">Real people, real homes</p>
+      <h2>Happy Nestly stories 💬</h2>
+    </div>
+    <div class="story-grid">
+      <div class="story-card">
+        <p>"Found our first apartment in like 4 days. Nestly made the whole thing feel way less scary."</p>
+        <div class="story-person">
+          <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=100&q=70" alt="">
+          <div><strong>Jordan &amp; Alex</strong><span>First-time buyers</span></div>
+        </div>
+      </div>
+      <div class="story-card">
+        <p>"The filters actually work?! Found a duplex under budget in my exact neighborhood."</p>
+        <div class="story-person">
+          <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&q=70" alt="">
+          <div><strong>Priya M.</strong><span>New homeowner</span></div>
+        </div>
+      </div>
+      <div class="story-card">
+        <p>"Booked a tour on my lunch break and moved in six weeks later. Wild how smooth it was."</p>
+        <div class="story-person">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&q=70" alt="">
+          <div><strong>Sam T.</strong><span>Condo buyer</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="container cta-inner">
+    <div class="cta-copy">
+      <h2>Ready when you are 🚀</h2>
+      <p>Drop your info and a Nestly agent will text you back — usually within the hour.</p>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <input type="text" placeholder="Your name" required>
+      <input type="email" placeholder="Email address" required>
+      <input type="tel" placeholder="Phone number">
+      <textarea placeholder="What are you hoping to find?" rows="3"></textarea>
+      <button type="submit" class="btn btn-primary btn-lg">Send it 🚀</button>
+      <p class="form-note" id="formNote" hidden>Yay! We got your message — talk soon 🎉</p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="#home" class="logo footer-logo"><span class="logo-blob">🏡</span><span>Nestly</span></a>
+      <p class="footer-tagline">Homes that fit your life. Demo site — all listings are fictitious.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#listings">Find a Home</a>
+      <a href="#how">How It Works</a>
+      <a href="#stories">Stories</a>
+    </div>
+    <div class="footer-col">
+      <h4>Say Hi</h4>
+      <a href="#contact">hello@nestly.example</a>
+      <a href="#contact">(555) 777-3456</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Nestly. All data on this site is fictitious demo content.</p>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harborview Realty | Find Your Next Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#home" class="logo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 11.5L12 4l9 7.5" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v9a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1v-9" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Harborview<strong>Realty</strong></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#listings">Listings</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#agents">Agents</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn btn-primary nav-cta">Get In Touch</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home">Home</a>
+  <a href="#listings">Listings</a>
+  <a href="#why-us">Why Us</a>
+  <a href="#agents">Agents</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-primary" style="margin-top:8px;">Get In Touch</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=70')"></div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <p class="eyebrow">Trusted by 12,000+ families</p>
+    <h1>Find a place<br>you'll love coming home to.</h1>
+    <p class="hero-sub">Browse curated listings across the metro area — from cozy starter homes to spacious family properties.</p>
+
+    <form class="search-card" id="searchForm">
+      <div class="search-field">
+        <label for="q">Location or Keyword</label>
+        <input type="text" id="q" placeholder="City, ZIP, or address">
+      </div>
+      <div class="search-field">
+        <label for="type">Home Type</label>
+        <select id="type">
+          <option value="all">All Types</option>
+          <option value="House">House</option>
+          <option value="Condo">Condo</option>
+          <option value="Townhouse">Townhouse</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label for="price">Max Price</label>
+        <select id="price">
+          <option value="0">No Max</option>
+          <option value="400000">$400,000</option>
+          <option value="600000">$600,000</option>
+          <option value="800000">$800,000</option>
+          <option value="1000000">$1,000,000</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary search-btn">Search Homes</button>
+    </form>
+
+    <div class="hero-stats">
+      <div><strong>1,240+</strong><span>Homes Sold</span></div>
+      <div><strong>4.9/5</strong><span>Client Rating</span></div>
+      <div><strong>28</strong><span>Neighborhoods</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="listings" id="listings">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Available Now</p>
+        <h2>Featured Listings</h2>
+      </div>
+      <div class="filter-chips" id="filterChips">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="House">Houses</button>
+        <button class="chip" data-filter="Condo">Condos</button>
+        <button class="chip" data-filter="Townhouse">Townhouses</button>
+      </div>
+    </div>
+
+    <div class="listing-grid" id="listingGrid"></div>
+
+    <p class="data-source" id="dataSource"></p>
+
+    <div class="empty-state" id="emptyState" hidden>
+      <p>No homes match your search. Try adjusting your filters.</p>
+      <button class="btn btn-ghost" id="resetFilters">Reset Filters</button>
+    </div>
+  </div>
+</section>
+
+<section class="why-us" id="why-us">
+  <div class="container why-grid">
+    <div class="why-copy">
+      <p class="eyebrow">Why Harborview</p>
+      <h2>Real estate, made refreshingly simple.</h2>
+      <p class="why-sub">We pair local market expertise with modern tools so you always know exactly where you stand — no jargon, no surprises.</p>
+      <ul class="why-list">
+        <li><span class="why-icon">✓</span><div><strong>Transparent pricing.</strong> Clear breakdowns of fees at every step.</div></li>
+        <li><span class="why-icon">✓</span><div><strong>Local experts.</strong> Agents who know every block in the neighborhoods we serve.</div></li>
+        <li><span class="why-icon">✓</span><div><strong>Fast closings.</strong> Average close time of 21 days, well under the national average.</div></li>
+      </ul>
+    </div>
+    <div class="why-image">
+      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=70" alt="Bright modern kitchen interior" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="agents" id="agents">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Meet The Team</p>
+        <h2>Agents who go the extra mile</h2>
+      </div>
+    </div>
+    <div class="agent-grid">
+      <div class="agent-card">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=70" alt="Portrait of agent Maya Chen" loading="lazy">
+        <h3>Maya Chen</h3>
+        <p>Senior Agent · Westbrook &amp; Downtown</p>
+      </div>
+      <div class="agent-card">
+        <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=400&q=70" alt="Portrait of agent Diego Alvarez" loading="lazy">
+        <h3>Diego Alvarez</h3>
+        <p>Agent · Family Homes Specialist</p>
+      </div>
+      <div class="agent-card">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=70" alt="Portrait of agent Priya Nair" loading="lazy">
+        <h3>Priya Nair</h3>
+        <p>Agent · First-Time Buyers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <p class="eyebrow" style="text-align:center;">Client Stories</p>
+    <h2 style="text-align:center;">Loved by buyers &amp; sellers alike</h2>
+    <div class="testimonial-grid">
+      <blockquote>“Maya made our first home purchase feel completely manageable. We closed in under three weeks.”<footer>— The Whitfield Family</footer></blockquote>
+      <blockquote>“Sold our condo above asking within 10 days of listing. The team's pricing strategy was spot on.”<footer>— Robert K.</footer></blockquote>
+      <blockquote>“Clear communication from day one. Highly recommend Harborview to anyone relocating.”<footer>— Amara S.</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="container cta-inner">
+    <div class="cta-copy">
+      <h2>Ready to find your next home?</h2>
+      <p>Tell us what you're looking for and a local agent will reach out within one business day.</p>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <input type="text" placeholder="Full name" required>
+      <input type="email" placeholder="Email address" required>
+      <input type="tel" placeholder="Phone number">
+      <textarea placeholder="What are you looking for?" rows="3"></textarea>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+      <p class="form-note" id="formNote" hidden>Thanks! A Harborview agent will be in touch shortly.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="#home" class="logo footer-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 11.5L12 4l9 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v9a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1v-9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Harborview<strong>Realty</strong></span>
+      </a>
+      <p class="footer-tagline">Modern real estate for modern families. Licensed brokerage in all 50 states (demo site — not a real brokerage).</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#listings">Listings</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#agents">Agents</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="#contact">hello@harborviewrealty.example</a>
+      <a href="#contact">(555) 010-2938</a>
+      <a href="#contact">400 Marina Blvd, Suite 210</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Harborview Realty. All data on this site is fictitious demo content.</p>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

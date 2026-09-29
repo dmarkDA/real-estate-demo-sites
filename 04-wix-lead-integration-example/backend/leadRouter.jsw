@@ -1,0 +1,90 @@
+// Backend web module — backend/leadRouter.jsw
+// Runs server-side in Wix; called from page code via a simple RPC-style import.
+
+import { Permissions, webMethod } from 'wix-web-module';
+import wixData from 'wix-data';
+import { contacts, triggeredEmails } from 'wix-crm-backend';
+import { fetch } from 'wix-fetch';
+
+// Set as a Secret in the Wix Secrets Manager, not hardcoded — referenced here
+// by name only. Points to a Zapier/Make "Catch Hook" that fans the lead out
+// to an external CRM (e.g. HubSpot, Follow Up Boss) and a shared spreadsheet.
+const EXTERNAL_CRM_WEBHOOK_SECRET_NAME = 'externalCrmWebhookUrl';
+
+export const submitLead = webMethod(Permissions.Anyone, async (lead) => {
+	try {
+		validateLead(lead);
+
+		// 1. Log every raw submission to a CMS collection ("Leads") so nothing
+		//    is ever lost even if a downstream integration is temporarily down.
+		await wixData.insert('Leads', {
+			...lead,
+			status: 'New',
+			receivedAt: new Date(),
+		});
+
+		// 2. Create or update a matching contact in the built-in Wix CRM so the
+		//    agent sees the lead in the Wix Inbox/CRM alongside everything else.
+		const contactInfo = {
+			name: { first: lead.name },
+			emails: [{ tag: 'MAIN', email: lead.email }],
+			phones: lead.phone ? [{ tag: 'MAIN', phone: lead.phone }] : [],
+		};
+		const contactId = await contacts.appendOrCreateContact(contactInfo);
+		await contacts.updateContact(contactId, {
+			labels: ['Website Lead'],
+		});
+
+		// 3. Notify the agent immediately by email using a Wix-triggered email
+		//    template (configured once in the Wix "Automations" panel).
+		await triggeredEmails.emailContact('newWebsiteLeadNotification', contactId, {
+			variables: {
+				leadName: lead.name,
+				leadEmail: lead.email,
+				leadPhone: lead.phone || 'Not provided',
+				property: lead.property || 'General inquiry',
+				message: lead.message || '',
+			},
+		});
+
+		// 4. Forward the lead to the external CRM / lead-management tool so it
+		//    lands wherever the agent's day-to-day pipeline already lives.
+		await forwardToExternalCrm(lead);
+
+		return { success: true };
+	} catch (err) {
+		console.error('submitLead failed:', err);
+		return { success: false, error: err.message };
+	}
+});
+
+function validateLead(lead) {
+	if (!lead || typeof lead !== 'object') {
+		throw new Error('Missing lead payload.');
+	}
+	if (!lead.name || !lead.email) {
+		throw new Error('Name and email are required.');
+	}
+}
+
+async function forwardToExternalCrm(lead) {
+	// getSecret() reads from Wix Secrets Manager at runtime — keeps the
+	// webhook URL out of source control entirely.
+	const { getSecret } = await import('wix-secrets-backend');
+	const webhookUrl = await getSecret(EXTERNAL_CRM_WEBHOOK_SECRET_NAME);
+
+	if (!webhookUrl) {
+		console.warn('External CRM webhook secret not configured — skipping forward.');
+		return;
+	}
+
+	await fetch(webhookUrl, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({
+			...lead,
+			submittedAt: new Date().toISOString(),
+			sourceSite: 'dolsydhawanrealestate.com',
+		}),
+	});
+}
